@@ -1,10 +1,10 @@
 <h1 align=center><img src="./icons/32x32.png" width="32" height="32" /> TickTick Pinned</h1>
 
 <p align=center>
-<img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/    {d171bf3e-5cff-4e28-b42e-4b0956d2d1b2}  ">
-<img src="https://img.shields.io/amo/rating/    {d171bf3e-5cff-4e28-b42e-4b0956d2d1b2}  " />
-<img src="https://img.shields.io/amo/dw/    {d171bf3e-5cff-4e28-b42e-4b0956d2d1b2}  " />
-<img src="https://img.shields.io/amo/users/    {d171bf3e-5cff-4e28-b42e-4b0956d2d1b2}  " />
+<img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/{d171bf3e-5cff-4e28-b42e-4b0956d2d1b2}" />
+<img src="https://img.shields.io/amo/rating/{d171bf3e-5cff-4e28-b42e-4b0956d2d1b2}" />
+<img src="https://img.shields.io/amo/dw/{d171bf3e-5cff-4e28-b42e-4b0956d2d1b2}" />
+<img src="https://img.shields.io/amo/users/{d171bf3e-5cff-4e28-b42e-4b0956d2d1b2}" />
 <img src="https://img.shields.io/github/license/semanticdata/firefox-ticktick-pinned" />
 </p>
 
