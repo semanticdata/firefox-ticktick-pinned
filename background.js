@@ -1,5 +1,5 @@
 let currentTabId;
-let whatsappTabId;
+let telegramTabId;
 let previousTab;
 
 function onError(e) {
@@ -24,20 +24,20 @@ function createPinnedTab() {
   )
 };
 
-function handleSearch(whatsappTabs) {
+function handleSearch(telegramTabs) {
   //console.log("currentTabId: " + currentTabId);
-  if (whatsappTabs.length > 0) {
+  if (telegramTabs.length > 0) {
     //console.log("there is a calendar tab");
-    whatsappTabId = whatsappTabs[0].id;
-    if (whatsappTabId === currentTabId) {
+    telegramTabId = telegramTabs[0].id;
+    if (telegramTabId === currentTabId) {
       //console.log("I'm in the drive tab");
       browser.tabs.update(previousTab, { active: true, });
     } else {
       //console.log("I'm NOT in the drive tab");
       previousTab = currentTabId;
-      browser.tabs.update(whatsappTabId, { active: true, });
+      browser.tabs.update(telegramTabId, { active: true, });
     }
-    setButtonIcon(whatsappTabs[0].favIconUrl);
+    setButtonIcon(telegramTabs[0].favIconUrl);
   } else {
     //console.log("there is NO drive tab");
     previousTab = currentTabId;
@@ -48,7 +48,7 @@ function handleSearch(whatsappTabs) {
 function handleClick(tab) {
   //console.log("*********Button clicked*********");
   currentTabId = tab.id;
-  var querying = browser.tabs.query({ url: "*://web.whatsapp.com/*" });
+  var querying = browser.tabs.query({ url: "*://ticktick.com/*" });
   querying.then(handleSearch, onError);
 };
 
