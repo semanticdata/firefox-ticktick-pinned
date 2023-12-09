@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "TickTick Pinned",
   "description": "Open or go to a pinned tab with the TickTick web app.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "background": {
     "scripts": [
       "background.js"
