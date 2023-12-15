@@ -12,6 +12,10 @@
 
 A Firefox extension to open or toggle a pinned tab with TickTick Web within it. This extension also adds a shortcut, and a button toggle within the toolbar.
 
+## Availability
+
+Available for Firefox here: https://addons.mozilla.org/firefox/addon/ticktick-pinned/
+
 ## How to Use
 
 1. Toggle the pinned tab by pressing _`Alt+Shift+5`_. This shortcut can be changed by going to _`Add-ons` → `TickTick Pinned` → `Options`_.
