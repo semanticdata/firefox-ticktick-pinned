@@ -17,11 +17,11 @@ A Firefox extension to open or toggle a pinned tab with TickTick Web within it. 
 
 ## ⚠ Disclaimer
 
-This extension is an independent project, has no relationship, and is not affiliated to TickTick in any way. This extension is primarily for personal use; a personal project if you will. This add-on <i>only</i> opens their web app in a pinned tab.
+This extension is an independent project, has no relationship, and is not affiliated to TickTick in any way. This extension is primarily for personal use; a personal project if you will. This add-on _only_ opens their web app in a pinned tab.
 
 ## 💜 Acknowledgments
 
-Icons used for all my extensions are part of <a href="https://uxwing.com/">UXWing</a>'s collection. Take a look at their <a href="https://uxwing.com/license">license</a>.
+Icons used for all my extensions are part of [UXWing](https://uxwing.com/)'s collection. Take a look at their [license](https://uxwing.com/license).
 
 ## © License
 
