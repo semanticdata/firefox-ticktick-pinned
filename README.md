@@ -4,7 +4,7 @@
 ![Add-on rating](https://img.shields.io/amo/rating/{d171bf3e-5cff-4e28-b42e-4b0956d2d1b2})
 ![Add-on downloads](https://img.shields.io/amo/dw/{d171bf3e-5cff-4e28-b42e-4b0956d2d1b2})
 ![Add-on users](https://img.shields.io/amo/users/{d171bf3e-5cff-4e28-b42e-4b0956d2d1b2})
-![License](https://img.shields.io/github/license/semanticdata/firefox-new-tab-notes)
+![License](https://img.shields.io/github/license/semanticdata/firefox-ticktick-pinned)
 
 A Firefox extension to open or toggle a pinned tab with TickTick Web within it. This extension also adds a shortcut, and a button toggle within the toolbar.
 
