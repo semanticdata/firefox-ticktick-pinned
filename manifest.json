@@ -8,9 +8,11 @@
   },
   "browser_specific_settings": {
     "gecko": {
+      "id": "{d171bf3e-5cff-4e28-b42e-4b0956d2d1b2}",
       "strict_min_version": "100.0"
     }
   },
+  "author": "semanticdata",
   "options_ui": {
     "page": "src/options/options.html",
     "browser_style": true
