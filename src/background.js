@@ -1,15 +1,22 @@
+// Background script for TickTick Pinned extension
+// This runs as a service worker in Manifest V3
+
 let currentTabId;
 let ticktickTabId;
 let previousTab;
 
+/**
+ * Logs errors to the console with extension context
+ * @param {Error} e - The error to log
+ */
 function onError(e) {
   console.error("TickTick Extension Error:", e);
 }
 
-function onOpened() {
-  console.log("Options page opened successfully");
-}
-
+/**
+ * Sets the browser action icon to the provided image URL
+ * @param {string} imageURL - The URL of the image to set as icon
+ */
 async function setButtonIcon(imageURL) {
   try {
     await browser.action.setIcon({ path: imageURL });
@@ -18,6 +25,9 @@ async function setButtonIcon(imageURL) {
   }
 }
 
+/**
+ * Creates a new pinned tab with TickTick webapp
+ */
 async function createPinnedTab() {
   try {
     await browser.tabs.create({
@@ -30,6 +40,10 @@ async function createPinnedTab() {
   }
 }
 
+/**
+ * Handles the tab search logic and switches between tabs
+ * @param {Array} ticktickTabs - Array of TickTick tabs found
+ */
 async function handleSearch(ticktickTabs) {
   try {
     if (ticktickTabs.length > 0) {
@@ -50,6 +64,10 @@ async function handleSearch(ticktickTabs) {
   }
 }
 
+/**
+ * Handles browser action clicks to toggle TickTick tabs
+ * @param {Object} tab - The currently active tab
+ */
 async function handleClick(tab) {
   try {
     currentTabId = tab.id;
@@ -60,11 +78,14 @@ async function handleClick(tab) {
   }
 }
 
+/**
+ * Handles extension installation and updates
+ * @param {Object} details - Installation details containing reason
+ */
 async function update(details) {
   try {
     if (details.reason === "install" || details.reason === "update") {
       await browser.runtime.openOptionsPage();
-      onOpened();
     }
   } catch (e) {
     onError(e);
