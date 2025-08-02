@@ -1,4 +1,4 @@
-const commandName = "_execute_browser_action";
+const commandName = "_execute_action";
 
 /* Update UI: set the value of the shortcut textbox. */
 async function updateUI() {

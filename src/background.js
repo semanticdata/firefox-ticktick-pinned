@@ -1,61 +1,75 @@
 let currentTabId;
-let telegramTabId;
+let ticktickTabId;
 let previousTab;
 
 function onError(e) {
-  console.log("***Error: " + e);
+  console.error("TickTick Extension Error:", e);
 }
 
-function setButtonIcon(imageURL) {
+function onOpened() {
+  console.log("Options page opened successfully");
+}
+
+async function setButtonIcon(imageURL) {
   try {
-    browser.browserAction.setIcon({ path: imageURL });
+    await browser.action.setIcon({ path: imageURL });
   } catch (e) {
     onError(e);
   }
 }
 
-function createPinnedTab() {
-  browser.tabs.create({
-    url: "https://ticktick.com/webapp/",
-    pinned: true,
-    active: true,
-  });
+async function createPinnedTab() {
+  try {
+    await browser.tabs.create({
+      url: "https://ticktick.com/webapp/",
+      pinned: true,
+      active: true,
+    });
+  } catch (e) {
+    onError(e);
+  }
 }
 
-function handleSearch(telegramTabs) {
-  //console.log("currentTabId: " + currentTabId);
-  if (telegramTabs.length > 0) {
-    //console.log("there is a calendar tab");
-    telegramTabId = telegramTabs[0].id;
-    if (telegramTabId === currentTabId) {
-      //console.log("I'm in the drive tab");
-      browser.tabs.update(previousTab, { active: true });
+async function handleSearch(ticktickTabs) {
+  try {
+    if (ticktickTabs.length > 0) {
+      ticktickTabId = ticktickTabs[0].id;
+      if (ticktickTabId === currentTabId) {
+        await browser.tabs.update(previousTab, { active: true });
+      } else {
+        previousTab = currentTabId;
+        await browser.tabs.update(ticktickTabId, { active: true });
+      }
+      await setButtonIcon(ticktickTabs[0].favIconUrl);
     } else {
-      //console.log("I'm NOT in the drive tab");
       previousTab = currentTabId;
-      browser.tabs.update(telegramTabId, { active: true });
+      await createPinnedTab();
     }
-    setButtonIcon(telegramTabs[0].favIconUrl);
-  } else {
-    //console.log("there is NO drive tab");
-    previousTab = currentTabId;
-    createPinnedTab();
+  } catch (e) {
+    onError(e);
   }
 }
 
-function handleClick(tab) {
-  //console.log("*********Button clicked*********");
-  currentTabId = tab.id;
-  var querying = browser.tabs.query({ url: "*://ticktick.com/*" });
-  querying.then(handleSearch, onError);
-}
-
-function update(details) {
-  if (details.reason === "install" || details.reason === "update") {
-    var opening = browser.runtime.openOptionsPage();
-    opening.then(onOpened, onError);
+async function handleClick(tab) {
+  try {
+    currentTabId = tab.id;
+    const ticktickTabs = await browser.tabs.query({ url: "*://ticktick.com/*" });
+    await handleSearch(ticktickTabs);
+  } catch (e) {
+    onError(e);
   }
 }
 
-browser.browserAction.onClicked.addListener(handleClick);
+async function update(details) {
+  try {
+    if (details.reason === "install" || details.reason === "update") {
+      await browser.runtime.openOptionsPage();
+      onOpened();
+    }
+  } catch (e) {
+    onError(e);
+  }
+}
+
+browser.action.onClicked.addListener(handleClick);
 browser.runtime.onInstalled.addListener(update);
