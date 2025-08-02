@@ -6,22 +6,39 @@
 ![Add-on users](https://img.shields.io/amo/users/{d171bf3e-5cff-4e28-b42e-4b0956d2d1b2})
 ![License](https://img.shields.io/github/license/semanticdata/firefox-ticktick-pinned)
 
-A Firefox extension to open or toggle a pinned tab with TickTick Web within it. This extension also adds a shortcut, and a button toggle within the toolbar.
+Tired of hunting for TickTick among dozens of tabs? This extension creates a persistent workspace for your task manager with smart tab switching.
+
+## What you get
+
+- Persistent pinned tab (never gets lost)
+- Lightning-fast **Alt+Shift+5** shortcut to jump to TickTick
+- **Press Alt+Shift+5 again** to return to your previous tab
+- Toolbar button for mouse users
+- Seamless TickTick integration
+
+Capture tasks, check deadlines, then get back to work—all without the tab shuffle dance. Hit the shortcut, handle your task, hit it again to return exactly where you left off.
 
 [![Get the Addon](https://raw.githubusercontent.com/semanticdata/text-revealer-firefox-extension/master/firefox.png)](https://addons.mozilla.org/en-US/firefox/addon/ticktick-pinned/)
 
-## Usage
+## How to Use
 
-1. Toggle the pinned tab by pressing _`Alt+Shift+5`_. This shortcut can be changed by going to _`Add-ons` → `TickTick Pinned` → `Options`_.
-2. If you prefer buttons over shortcuts, there is a toolbar button you can press to toggle the pinned tab.
+### Keyboard Shortcut (Recommended)
 
-## ⚠ Disclaimer
+- Press **Alt+Shift+5** to open TickTick in a pinned tab
+- Press **Alt+Shift+5** again to return to your previous tab
+- Customize the shortcut in _Add-ons → TickTick Pinned → Options_
 
-This extension is an independent project, has no relationship, and is not affiliated to TickTick in any way. This extension is primarily for personal use; a personal project if you will. This add-on _only_ opens their web app in a pinned tab.
+### Toolbar Button
+
+- Click the TickTick icon in your Firefox toolbar to toggle the pinned tab
 
 ## 💜 Acknowledgments
 
 Icons used for all my extensions are part of [UXWing](https://uxwing.com/)'s collection. Take a look at their [license](https://uxwing.com/license).
+
+## Disclaimer
+
+_Independent open source project—not affiliated with TickTick. Just making Firefox a bit more convenient for everyday productivity._
 
 ## © License
 
