@@ -1,61 +1,42 @@
 <!DOCTYPE html>
-
 <html lang="en-US">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TickTick Pinned - Config</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="options.css" />
-  </head>
 
-  <body>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">
-          <img src="./../icons/32x32.png" alt="logo" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TickTick Pinned - Options</title>
+  <meta name="description" content="TickTick Pinned Options Page" />
+  <link rel="icon" type="image/png" href="./../icons/32x32.png" />
+  <link rel="stylesheet" href="options.css" />
+</head>
 
-          TickTick<sup class="subtitle">📌Pinned</sup>
-        </h1>
+<body>
+  <main>
+    <header>
+      <img src="./../icons/32x32.png" alt="TickTick Pinned logo" width="32" height="32" />
+      <h1>TickTick<sup>📌Pinned</sup></h1>
+    </header>
 
-        <form>
-          <label>Keyboard Shortcut</label>
-          <br />
-          <input class="input is-small is-dark" type="text" id="shortcut" />
-        </form>
-
-        <button id="update" class="button is-small is-outlined is-dark"
-          >Update</button
-        >
-
-        <button class="button is-small is-outlined is-dark" id="reset"
-          >Reset</button
-        >
-
-        <p
-          >Made with
-          <a href="https://github.com/semanticdata/firefox-ticktick-pinned/"
-            ><i class="fa fa-heart" aria-hidden="true"></i
-          ></a>
-          by
-          <a
-            class="site-author"
-            href="https://miguelpimentel.do/"
-            target="_blank"
-          >
-            Miguel Pimentel</a
-          >.
-        </p>
+    <form>
+      <label for="shortcut">Keyboard Shortcut</label>
+      <input type="text" id="shortcut" />
+      <div>
+        <button type="button" id="update">Update</button>
+        <button type="button" id="reset">Reset</button>
       </div>
-    </section>
+    </form>
 
-    <script src="options.js"></script>
-  </body>
+    <footer>
+      <p>
+        Made with
+        <a href="https://github.com/semanticdata/firefox-ticktick-pinned/" target="_blank" rel="noopener" class="heart">
+          <img src="./../icons/heart.svg" aria-hidden="true" width="16" height="16" alt="heart-icon" />
+        </a> by <a href="https://miguelpimentel.do/" target="_blank" rel="noopener">Miguel Pimentel</a>.
+      </p>
+    </footer>
+  </main>
+
+  <script src="options.js"></script>
+</body>
+
 </html>
